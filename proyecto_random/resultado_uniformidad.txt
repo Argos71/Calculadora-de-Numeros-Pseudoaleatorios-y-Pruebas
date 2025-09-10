@@ -1,0 +1,4 @@
+frecuencias: [1, 1, 0, 1, 0, 0, 0, 0, 1, 0]
+chi2: 6.0
+critico: 16.918977604620448
+resultado: Aceptado

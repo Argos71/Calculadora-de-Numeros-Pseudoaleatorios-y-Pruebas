@@ -1,0 +1,4 @@
+varianza: 0.10129859
+chi2: 3.64674924
+intervalo: (np.float64(0.2157952826238978), np.float64(9.348403604496148))
+resultado: Aceptado
