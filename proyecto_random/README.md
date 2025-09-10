@@ -62,8 +62,8 @@ Dependencias principales:
 1. Clonar el repositorio o descargar el proyecto:  
 
    ```bash
-   git clone https://github.com/usuario/proyecto-pseudoaleatorios.git
-   cd proyecto-pseudoaleatorios/src
+   git clone https://github.com/Argos71/Calculadora-de-Numeros-Pseudoaleatorios-y-Pruebas.git
+   cd proyecto_random
    ```
 
 2. Instalar las dependencias:  
@@ -165,6 +165,4 @@ Para cada secuencia generada, el programa dibuja un **histograma de distribució
 
 ---
 
-## 📜 Licencia
 
-Este proyecto está bajo la licencia **MIT**.  
