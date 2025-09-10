@@ -1,10 +1,285 @@
-# Proyecto de Generadores de Números Pseudoaleatorios
+📊 Generador de Números Pseudoaleatorios con Pruebas Estadísticas
 
-Este sistema permite:
-- Generar números pseudoaleatorios con **cuadrados medios** y **multiplicador constante**.
-- Realizar pruebas estadísticas: **medias**, **varianza** y **uniformidad (chi²)**.
-- Visualizar resultados en **histogramas** y exportar reportes.
+Este proyecto implementa un sistema generador de números pseudoaleatorios con interfaz gráfica (GUI en Tkinter), que permite generar secuencias mediante diferentes algoritmos clásicos y aplicar pruebas estadísticas para evaluar su validez.
 
-## 🚀 Ejecución
-```bash
+Incluye los siguientes algoritmos de generación:
+
+✅ Cuadrados Medios (Middle Square Method)
+
+✅ Multiplicación de Semillas (Product of Seeds Method)
+
+✅ Multiplicador Constante con Semilla Fija (Constant Multiplier Method)
+
+Y las siguientes pruebas estadísticas:
+
+📌 Prueba de Uniformidad (Chi²)
+
+📌 Prueba de Medias
+
+📌 Prueba de Varianza
+
+El programa muestra los resultados en tablas detalladas y genera histogramas de distribución.
+
+📂 Estructura de Carpetas
+
+El proyecto se organiza de la siguiente forma:
+
+proyecto-pseudoaleatorios/
+│
+├── src/
+│   ├── main.py                # Archivo principal: GUI y ejecución
+│   ├── generadores.py         # Algoritmos de generación de números
+│   ├── pruebas.py             # Funciones de pruebas estadísticas
+│   ├── utils.py               # Funciones auxiliares (ej. exportar CSV)
+│
+├── data/
+│   └── resultados/            # Carpeta donde se guardarán las exportaciones CSV
+│
+├── README.md                  # Documentación del proyecto
+└── requirements.txt           # Dependencias del proyecto
+
+⚙️ Dependencias
+
+El programa está desarrollado en Python 3.8+ y requiere las siguientes librerías:
+
+pip install matplotlib scipy
+
+
+Dependencias principales:
+
+Tkinter → Interfaz gráfica (incluido en la instalación estándar de Python).
+
+Matplotlib → Gráficas e histogramas.
+
+SciPy → Cálculos estadísticos (Chi², límites de pruebas).
+
+CSV (módulo estándar) → Exportación de resultados.
+
+▶️ Ejecución del Programa
+
+Clonar el repositorio o descargar el proyecto:
+
+git clone https://github.com/usuario/proyecto-pseudoaleatorios.git
+cd proyecto-pseudoaleatorios/src
+
+
+Instalar las dependencias:
+
+pip install -r ../requirements.txt
+
+
+Ejecutar el programa desde main.py:
+
 python main.py
+
+🖥️ Funcionamiento del Programa
+1. Selección de Algoritmo
+
+Desde la interfaz gráfica, el usuario puede elegir entre:
+
+Cuadrados Medios: Se eleva al cuadrado la semilla y se toman los dígitos centrales.
+
+Multiplicación de Semillas: Dos semillas iniciales se multiplican y se extraen los dígitos centrales.
+
+Multiplicador Constante: Una semilla fija se multiplica iterativamente con otra semilla cambiante, extrayendo los dígitos centrales en cada paso.
+
+2. Generación de Números
+
+Se introducen las semillas y la cantidad de números a generar.
+
+Se muestran en una tabla interactiva con índice y valor.
+
+Opcional: Se exportan los resultados en CSV.
+
+3. Pruebas Estadísticas
+
+El usuario selecciona qué prueba aplicar:
+
+🔹 Prueba de Uniformidad (Chi²)
+
+Divide los números generados en intervalos y compara la frecuencia observada vs la frecuencia esperada.
+
+Tabla con intervalos, frecuencias, diferencia cuadrática y suma total.
+
+Determina si la distribución es uniforme.
+
+🔹 Prueba de Medias
+
+Evalúa si la media de los números está dentro del rango esperado:
+
+𝐿
+𝐼
+=
+1
+2
+−
+𝑍
+𝛼
+/
+2
+(
+1
+12
+𝑛
+)
+LI=
+2
+1
+	​
+
+−Z
+α/2
+	​
+
+(
+12n
+	​
+
+1
+	​
+
+)
+𝐿
+𝑆
+=
+1
+2
++
+𝑍
+𝛼
+/
+2
+(
+1
+12
+𝑛
+)
+LS=
+2
+1
+	​
+
++Z
+α/2
+	​
+
+(
+12n
+	​
+
+1
+	​
+
+)
+
+Donde:
+
+𝑛
+n = cantidad de números generados.
+
+𝑍
+𝛼
+/
+2
+Z
+α/2
+	​
+
+ = valor crítico (1.96 para 95%).
+
+La tabla muestra: media obtenida, límite inferior, límite superior y resultado (si cumple o no).
+
+🔹 Prueba de Varianza
+
+Evalúa si la varianza de la secuencia cae dentro de los límites esperados:
+
+𝐿
+𝐼
+=
+𝑋
+1
+−
+𝛼
+/
+2
+,
+𝑛
+−
+1
+2
+12
+(
+𝑛
+−
+1
+)
+LI=
+12(n−1)
+X
+1−α/2,n−1
+2
+	​
+
+	​
+
+𝐿
+𝑆
+=
+𝑋
+𝛼
+/
+2
+,
+𝑛
+−
+1
+2
+12
+(
+𝑛
+−
+1
+)
+LS=
+12(n−1)
+X
+α/2,n−1
+2
+	​
+
+	​
+
+
+La tabla muestra: varianza obtenida, límites y decisión.
+
+4. Histogramas
+
+Para cada secuencia generada, el programa dibuja un histograma de distribución en Matplotlib.
+
+📋 Ejemplo de Uso
+
+Ingresar semilla 1234, cantidad de números 20, seleccionar Cuadrados Medios.
+
+Se genera una tabla:
+
+Índice	Número Aleatorio
+1	0.4356
+2	0.8765
+…	…
+
+Seleccionar Prueba de Uniformidad → Se muestra tabla de frecuencias:
+
+Intervalo	F. Observada	F. Esperada	Dif²
+0.0-0.1	3	2.0	0.5
+0.1-0.2	1	2.0	0.5
+…	…	…	…
+
+Se genera el histograma automáticamente.
+
+📌 Consideraciones
+
+El algoritmo de Multiplicador Constante mantiene la primera semilla fija y va multiplicando sucesivamente por el resultado obtenido, extrayendo siempre los dígitos centrales.
+
+Se recomienda usar semillas de al menos 4 dígitos para evitar ciclos cortos.
+
+El número de intervalos en la prueba de Chi² puede ajustarse en la interfaz.
