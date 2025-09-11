@@ -165,4 +165,15 @@ Para cada secuencia generada, el programa dibuja un **histograma de distribució
 
 ---
 
+## Bitácora
+
+📓 Bitácora del Proyecto
+
+Clase 1 - 13/08/2025: Presentación de la materia y explicación de los objetivos del proyecto de generadores pseudoaleatorios.
+
+Clase 2 - 20/08/2025: Desarrollo de los algoritmos de cuadrados medios y productos medios.
+
+Clase 3 - 27/08/2025: Desarrollo del algoritmo de multiplicador constante y aplicación de las pruebas de medias y pruebas de varianza.
+
+Clase 4 - 03/09/2025: Ejecución de pruebas de uniformidad para validar la distribución de los números generados.
 
